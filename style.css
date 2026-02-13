@@ -1,0 +1,179 @@
+/* reset css */
+* {
+  min-width: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* styles */
+body {
+  background-color: #CBC3E3;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-letter {
+  position: relative;
+}
+
+.cover {
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  /*Parte superior*/
+  border-top: 100px solid #0FB9B1;
+  border-bottom: 100px solid transparent;
+  transition: transform .75s;
+  transform-origin: top;
+}
+
+.paper {
+  position: absolute;
+  padding: 1.5rem;
+  line-height: 2rem;
+  right: 5px;
+  z-index: -1;
+  background: white;
+  width: 390px;
+  height: 180px;
+  top: 0;
+  transition: all .75s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.recipient {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+#recipientName {
+  color: #8365de; /* Nombre en morado*/
+}
+
+.message {
+  font-size: 1rem;
+  font-weight: normal;
+  color: black;
+}
+
+.letter {
+  border-left: 200px solid #40E0D0;
+  border-right: 200px solid #40E0D0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid #37d0c1;
+}
+
+.options {
+  display: flex;
+  gap: 5rem;
+}
+
+.options button {
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 3px;
+  background: #40E0D0;
+  padding: 0.5rem 1rem;
+  border: 1px solid #40E0D0;
+  cursor: pointer;
+}
+
+.options button:hover {
+  background: #0FB9B1;
+  color: white;
+}
+
+.open-paper {
+  animation: openPaper .5s forwards;
+}
+
+@keyframes openPaper {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -120px;
+  }
+}
+
+.close-paper {
+  animation: closePaper .5s forwards;
+}
+
+@keyframes closePaper {
+  0% {
+    top: -120px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.heart {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 46.5%;
+  margin: auto;
+  font-size: 3rem;
+  color: #fe3334;
+  animation: crecer 1s forwards;
+}
+
+@keyframes crecer {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 3;
+    opacity: 0;
+  }
+}
+#no {
+  transition: left 0.2s ease, top 0.2s ease;
+}
+#responseButtons {
+  margin-top: 2%;
+}
